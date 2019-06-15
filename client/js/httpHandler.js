@@ -2,6 +2,11 @@
 
   const serverUrl = 'http://127.0.0.1:3000';
  
+ 
+    // 
+
+//     $.get('http://127.0.0.1:3000', (data) => {
+// SwimTeam.move(data)})
   //
   // TODO: build the swim command fetcher here
   //
@@ -16,7 +21,7 @@
     $.ajax({
       type: 'POST',
       data: formData,
-      url: 'FILL_ME_IN',
+      url: serverUrl,
       cache: false,
       contentType: false,
       processData: false,
