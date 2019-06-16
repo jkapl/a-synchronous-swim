@@ -5,11 +5,23 @@
  
     // 
 
-//     $.get('http://127.0.0.1:3000', (data) => {
+//     $.get(c, (data) => {
 // SwimTeam.move(data)})
   //
   // TODO: build the swim command fetcher here
   //
+   const fetcher = () => { 
+    $.get({
+      url: serverUrl,
+      success: (data) => { 
+        SwimTeam.move(data) 
+      },
+      complete: () => { 
+        setTimeout(fetcher, 50) 
+      }
+   });
+  };
+  fetcher();
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
   // Note: remember to fix the URL below.
